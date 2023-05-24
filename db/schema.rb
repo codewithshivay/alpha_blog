@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2023_05_18_124219) do
     t.text "discription"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer "testing"
   end
 
   create_table "users", force: :cascade do |t|

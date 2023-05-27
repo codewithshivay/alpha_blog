@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
             flash[:notice] = "Article was created successfully"
           #render plain: @article.inspect -> for showing the value
           #redirect_to article_path(@article) -> this will also work same
+          #render plain: params[:article] --> this will show added new artilce in hash type
           redirect_to @article
         else
             render 'new'

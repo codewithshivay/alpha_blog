@@ -1,3 +1,68 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.navbar 
+{
+  background-color: black !important;
+}
+  
+.nav-link 
+{
+    color: white;
+}
+
+#logo 
+{
+    float: left;
+    font-size: 1.7em;
+    color: #e10707;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#home-container
+{
+    margin-top: 130px;
+}
+
+.jumbotron
+{
+    background-image: asset-url('patrick-fore-0gkw_9fy0eQ-unsplash.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 525px;
+    position: fixed;
+    padding: 100px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+
+body {
+  background: #007bff;
+  background: linear-gradient(to right, #f2f2f3, #33AEFF);
+}
+
+.container
+{
+    height: 100%;
+}
+
+#submit_btn
+{
+  padding-left: 195px;
+  padding-right: 195px;
+  margin-left: 195px;
+  margin-right: 195px;
+}

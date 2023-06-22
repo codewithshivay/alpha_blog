@@ -1,31 +1,36 @@
-<% if @article.errors.any? %>
-<h2> Following Policies are applied when Save the Article</h2>
- <ul>
-   <% @article.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
-   <% end %>
-  </ul>
-<% end %>
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-10">
+    <%= render 'shared/errors' %>
+      <%= form_with(model: @article, class: "shadow p-3 mb-3 bg-success rounded", local: true) do |f| %>
 
-<%= form_with(model: @article, local: true) do |f| %>
+          <div class= "form-group row">
+            <%= f.label :title, class: "col-2 col-from-label text-light" %>
+              <div class= "col-10">
+                <%= f.text_field :title, class: "form-control shadow rounded", placeholder: "Title of article" %>
+              </div>
+          </div>
+          
+          <div class= "form-group row mt-3">
+            <%= f.label :discription, class: "col-2 col-from-label text-light" %>
+            <div class= "col-10">
+              <%= f.text_area :discription, rows: 10, class: "form-control shadow rounded", placeholder: "Description  of article" %>
+              </div>
+          </div>
 
-    <p>
-      <%= f.label :title %><br/>
-      <%= f.text_field :title %>
-    </p>
-    
-    <p>
-      <%= f.label :discription %><br/>
-      <%= f.text_area :discription %>
-    </p>
+          <div class= "form-group row mt-3">
+            <%= f.label :bar_code, class: "col-2 col-from-label text-light" %>
+              <div class= "col-10">
+                <%= f.number_field :bar_code, class: "form-control shadow rounded", placeholder: "Bar_code of article" %>
+              </div>
+          </div>
 
-    <p>
-      <%= f.label :bar_code %><br/>
-      <%= f.number_field :bar_code %>
-    </p>
+          <div class= "form-group row justify-content-center mt-3" id = "submit_btn">
+            <%= f.submit class: "btn btn-outline-light btn-lg" %>
+          </div>
 
-    <p>
-      <%= f.submit %>
-    </p>
-
-<% end %>
+      <% end %>
+    </div>
+    <div class="text-center mb-3"><%= link_to '[ Return to Article Listing ]', articles_path, class: "text-primary" %></div>
+  </div >
+</div>

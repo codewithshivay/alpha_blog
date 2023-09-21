@@ -33,3 +33,22 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# Ignore Rackfile
+Rakefile
+
+#Ignore babel config
+babel.config.js
+
+#Ignore json
+package.json
+
+#Ignore yarn
+yarn.lock
+
+#Ignore postCSS
+postcss.config.js
+
+#Ignore all hidden files
+.*
+

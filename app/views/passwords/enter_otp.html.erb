@@ -1,0 +1,17 @@
+<h1>Enter OTP</h1>
+
+<%= form_tag verify_otp_passwords_path, class: "shadow p-3 mb-3 bg-danger rounded", method: :post do %>
+  <div>
+    <%= label_tag 'otp', 'Enter OTP:', class: "col-2 col-form-label mt-4 text-light" %>
+    <%= text_field_tag 'otp', nil, class: "form-control shadow rounded" %>
+  </div>
+
+  <div class="from-group row mt-4 justify-content-center">
+    <%= submit_tag "Verify OTP", class: "btn btn-outline-light btn-lg" %>
+  </div>
+
+<% end %>
+
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>

@@ -11,4 +11,23 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   resources :categories, except: [:destroy]
+
+  get '/search', to: 'articles#search'
+  get '/search', to: 'users#search'
+
+  resources :users do
+    member do
+      get 'edit_password', to: 'passwords#edit_password'
+      patch 'update_password', to: 'passwords#update_password'
+    end
+  end
+  
+  resources :passwords, only: [:new, :create] do
+    collection do
+      get 'enter_otp'
+      post 'verify_otp'
+      get 'reset_password'
+    end
+  end
+
 end

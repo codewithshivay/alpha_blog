@@ -4,6 +4,12 @@
     <%= will_paginate @articles, :container => false %>
 </div>
 
+<%= form_tag articles_path, method: :get do %>
+ <%= label_tag(:search, "Search from here")%>
+ <%= text_field_tag(:search)%>
+ <%= submit_tag(:search)%>
+<%end%>
+
 <%= render 'articles' %>
 
 <div class="flickr_pagination mb-4">

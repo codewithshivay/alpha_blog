@@ -8,7 +8,11 @@ class UsersController < ApplicationController
     end
 
     def index
-        @users = User.paginate(page: params[:page], per_page: 5)
+       if params[:search]
+         @users = User.where("lower(name) like :query", query: "%#{params[:search].downcase}%").paginate(page: params[:page], per_page: 5)
+       else
+         @users = User.paginate(page: params[:page], per_page: 5)
+       end
     end
 
     def new

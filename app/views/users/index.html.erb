@@ -4,6 +4,12 @@
     <%= will_paginate @users, :container => false %>
 </div>
 
+<%= form_tag users_path, method: :get do %>
+ <%= label_tag(:search, "Search from here")%>
+ <%= text_field_tag(:search)%>
+ <%= submit_tag(:search)%>
+<%end%>
+
 <div class= "container">
 <% @users.each do |user| %>
   <div class="row justify-content-md-center">

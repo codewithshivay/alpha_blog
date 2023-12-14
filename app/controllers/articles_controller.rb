@@ -8,7 +8,11 @@ class ArticlesController < ApplicationController
     end
 
     def index
-        @articles = Article.paginate(page: params[:page], per_page: 5)
+       if params[:search]
+         @articles = Article.where("lower(title) like :query OR lower(bar_code) like :query OR lower(discription) like :query", query: "%#{params[:search].downcase}%").paginate(page: params[:page], per_page: 5)
+       else
+         @articles = Article.paginate(page: params[:page], per_page: 5)
+       end
     end
 
     def new

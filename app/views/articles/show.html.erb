@@ -18,6 +18,7 @@
         <small> Created <%= time_ago_in_words(@article.created_at) %> ago
             Edited <%= time_ago_in_words(@article.updated_at) %> ago</small>
         </div>
+        <button><%= link_to "Back to articles page", articles_path%></button>
     </div>
     </div>
 </div>

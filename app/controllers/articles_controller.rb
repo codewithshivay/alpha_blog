@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
     before_action :set_articel, only: [:show, :edit, :update, :destroy]
-    before_action :require_user, except: [:show, :index]
+    before_action :require_user, except: [:show]
     before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def show

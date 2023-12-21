@@ -40,7 +40,7 @@ class PasswordsController < ApplicationController
       redirect_to enter_otp_passwords_path
     else
       flash[:alert] = "Email not found. Please check and try again."
-      render 'new'
+      redirect_to root_path
     end
   end
 

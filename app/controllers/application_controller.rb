@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
     before_action :require_user
     helper_method :current_user, :Logged_in?
 

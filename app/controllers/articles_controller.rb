@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
+    before_action :set_article, only: [:show, :edit, :update, :destroy]
     before_action :require_same_user, only: [:edit, :update, :destroy]
-    before_action :set_articel, only: [:show, :edit, :update, :destroy]
-
+    
     def show
         #@article = Article.find(params[:id])
     end
@@ -54,12 +54,12 @@ class ArticlesController < ApplicationController
 
     private
 
-    def set_articel
+    def set_article
       @article = Article.find(params[:id])
     end
 
     def article_param
-      params.require(:article).permit(:title, :discription, :bar_code)
+      params.require(:article).permit(:title, :discription, :bar_code, category_ids: [])
     end
 
     def require_same_user

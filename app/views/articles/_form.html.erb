@@ -25,6 +25,14 @@
               </div>
           </div>
 
+          <div class= "form-group row mt-3">
+            <%= f.label :category, class: "col-2 col-from-label text-light" %>
+              <div class= "col-10">
+                <%= f.collection_select(:category_ids, Category.all, :id, :name,
+                {prompt: "Make Your Selection From the List below (can be empty)"}, { multiple: true, class: "custom-select shadow rounded" }) %>
+              </div>
+          </div>
+
           <div class= "form-group row justify-content-center mt-3" id = "submit_btn">
             <%= f.submit class: "btn btn-outline-light btn-lg" %>
           </div>
